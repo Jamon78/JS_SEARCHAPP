@@ -1,4 +1,4 @@
-main, footer, .searchEntry {
+main, footer, .searchEntry, .results, .results .searchResults .resultItem {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -196,5 +196,143 @@ img {
   padding-bottom: 0.5rem;
   border-bottom-width: 1px;
   border-bottom-style: solid;
+}
+
+.searchEntry .searchBar .searchButton:hover i,
+.searchEntry .searchBar .searchButton:focus i {
+  color: #3cba54;
+}
+
+.searchEntry .searchBar .clear:hover i,
+.searchEntry .searchBar .clear:focus i {
+  color: #db3236;
+}
+
+@media only screen and (min-width: 768px) {
+  .searchEntry .searchBar .searchButton {
+    padding-left: 1rem;
+  }
+}
+
+.searchEntry .searchBar .clear {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #70757a;
+  border-right: thin solid #d9d9d9;
+}
+
+@media only screen and (min-width: 768px) {
+  .searchEntry .searchBar .clear {
+    padding: 0 1rem;
+  }
+}
+
+.searchEntry .searchBar:hover,
+.searchEntry .searchButton:focus {
+  -webkit-box-shadow: 0 2px 5px 2px #e6e6e6;
+          box-shadow: 0 2px 5px 2px #e6e6e6;
+}
+
+.results {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0.5rem 1rem;
+  width: 90vw;
+}
+
+@media only screen and (min-width: 768px) {
+  .results {
+    width: 75vw;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .results {
+    width: 55vw;
+  }
+}
+
+.results .statsBar {
+  width: 100%;
+}
+
+.results .statsBar .stats {
+  color: #70757a;
+  font-size: 0.75rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .results .statsBar .stats {
+    font-size: 1rem;
+  }
+}
+
+.results .searchResults {
+  width: 100%;
+}
+
+.results .searchResults .resultItem {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  padding: 0.25rem 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .results .searchResults .resultItem {
+    padding: 0.5rem 0;
+  }
+}
+
+.results .searchResults .resultItem .resultTitle {
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 0.25rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 3px 2px;
+}
+
+@media only screen and (min-width: 768px) {
+  .results .searchResults .resultItem .resultTitle {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.results .searchResults .resultItem .resultTitle a {
+  color: #1a0dab;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.results .searchResults .resultItem .resultTitle a:visited {
+  color: #609;
+}
+
+.results .searchResults .resultItem .resultTitle a:hover {
+  text-decoration: underline;
+}
+
+.results .searchResults .resultItem .resultTitle a:focus {
+  outline: 2px solid #000;
 }
 /*# sourceMappingURL=style.css.map */
