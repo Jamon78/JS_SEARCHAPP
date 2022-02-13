@@ -34,16 +34,17 @@ const createResultItem = (result) => {
   link.textContent = result.title;
   link.target = '_blank';
   resultTitle.append(link);
-  resultTitle.append(resultTitle);
+  resultItem.append(resultTitle);
   return resultItem;
 };
 
 const createResultImage = (result) => {
   const resultImage = document.createElement('div');
+  resultImage.classList.add('resultImage');
   const img = document.createElement('img');
   img.src = result.img;
   img.alt = result.title;
-  resultImage.append('img');
+  resultImage.append(img);
   return resultImage;
 };
 

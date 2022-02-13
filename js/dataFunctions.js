@@ -1,5 +1,5 @@
 export const getSearchTerm = () => {
-  const rawSearchTerm = document.getElementById('search').ariaValueMax.trim();
+  const rawSearchTerm = document.getElementById('search').value.trim();
   const regex = /[ ]{2,}/gi;
   const searchTerm = rawSearchTerm.replaceAll(regex, ' ');
   return searchTerm;
@@ -15,14 +15,14 @@ export const retrieveSearchResults = async (searchTerm) => {
   return resultArray;
 };
 
-const wikiSearchString = (searchTerm) => {
+const getWikiSearchString = (searchTerm) => {
   const maxChars = getMaxChars();
   const rawSearchString = `https://en.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=${searchTerm}&gsrlimit=20&prop=pageimages|extracts&exchars=130&exintro&explaintext&exlimit=max&format=json&origin=*`;
   const searchString = encodeURI(rawSearchString);
   return searchString;
 };
 
-const maxChars = () => {
+const getMaxChars = () => {
   const width = window.innerWidth || document.body.clientWidth;
   let maxChars;
   if (width < 414) maxChars = 65;
@@ -47,7 +47,7 @@ const processWikiResults = (results) => {
     const id = key;
     const title = results[key].title;
     const text = results[key].extract;
-    const im = results[key].hasOwnProperty('thumbnail')
+    const img = results[key].hasOwnProperty('thumbnail')
       ? results[key].thumbnail.source
       : null;
     const item = {
